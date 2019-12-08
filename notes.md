@@ -13,6 +13,7 @@ Views
     create user/login
     see all comments* 
   Teams
+    User must select their team from checkbox list
     See all comments
   Comments
     Create comment*
