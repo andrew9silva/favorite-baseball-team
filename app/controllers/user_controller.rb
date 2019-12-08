@@ -15,4 +15,6 @@ class UserController < ApplicationController
   post '/create_account' do 
     erb :'user/create_user'
   end
+  
+  
 end
