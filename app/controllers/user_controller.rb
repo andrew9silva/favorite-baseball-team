@@ -39,7 +39,7 @@ class UserController < ApplicationController
   post '/create_account' do 
     params.each do |label, input|
       if input.empty?
-        redirect to '/user/create_account'
+        redirect to 'user/create_account'
       end
     end
     user = User.create(:username => params["username"], :email => params["email"], :password => params["password"])
@@ -48,4 +48,17 @@ class UserController < ApplicationController
     redirect to '/create_comment'
   end
  end
+ 
+ get '/logout' do
+   erb :'/user/logout'
+ end 
+ 
+ post '/logout' do
+    if is_logged_in?(session)
+      session.clear
+      redirect to '/login'
+    else
+      redirect to '/'
+    end
+  end
 end
