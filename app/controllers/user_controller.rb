@@ -11,20 +11,41 @@ class UserController < ApplicationController
   end
   
   get '/login' do
-    erb :'user/login'
+    if is_logged_in?(session)
+      redirect to '/create_comment'
+    end
+   
+    erb :'/user/login'
   end 
   
   post '/login' do
+    
+    user = User.find_by(:username => params["username"])
+
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect to '/create_comment'
+    else
     erb :'user/login'
   end 
   
   get '/create_account' do 
-    erb :'user/create_user'
+    if is_logged_in?(session)
+      redirect to '/create_comment'
+    end
+    erb :'user/create_account'
   end
   
   post '/create_account' do 
-    erb :'user/create_user'
+    params.each do |label, input|
+      if input.empty?
+        redirect to '/user/create_account'
+      end
+    end
+    user = User.create(:username => params["username"], :email => params["email"], :password => params["password"])
+    session[:user_id] = user.id
+    
+    redirect to '/create_comment'
   end
-  
-  
+ end
 end

@@ -8,6 +8,10 @@ class CommentController < ApplicationController
   end
   
   get '/comments' do 
+    if !is_logged_in?(session)
+      redirect to '/login'
+    end
+    @user = current_user(session)
     @comments = Comment.all 
     erb :'comment/comments'
   end
