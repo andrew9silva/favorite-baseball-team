@@ -13,6 +13,8 @@ class UserController < ApplicationController
   get '/login' do
     if is_logged_in?(session)
       redirect to '/create_comment'
+    else 
+      
     end
    
     erb :'/user/login'
@@ -26,7 +28,8 @@ class UserController < ApplicationController
       session[:user_id] = user.id
       redirect to '/create_comment'
     else
-    erb :'user/login'
+     erb :'user/login' 
+    end
   end 
   
   get '/create_account' do 
@@ -61,4 +64,3 @@ class UserController < ApplicationController
       redirect to '/'
     end
   end
-end

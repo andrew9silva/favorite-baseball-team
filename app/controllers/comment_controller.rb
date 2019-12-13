@@ -15,4 +15,10 @@ class CommentController < ApplicationController
     @comments = Comment.all 
     erb :'comment/comments'
   end
+  
+  post '/comments' do
+    user = current_user(session)
+    comment = Comment.create(:content => params["content"], :user_id => user.id)
+  end 
+  
 end
