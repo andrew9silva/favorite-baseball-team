@@ -32,6 +32,10 @@ class UserController < ApplicationController
     end
   end 
   
+  get '/logout' do
+   erb :'user/login'
+  end 
+  
   get '/create_account' do 
     if is_logged_in?(session)
       redirect to '/create_comment'
@@ -52,15 +56,5 @@ class UserController < ApplicationController
   end
  end
  
- get '/logout' do
-   erb :'/user/logout'
- end 
  
- post '/logout' do
-    if is_logged_in?(session)
-      session.clear
-      redirect to '/login'
-    else
-      redirect to '/'
-    end
-  end
+ 
