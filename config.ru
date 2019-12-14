@@ -7,3 +7,4 @@ end
 run ApplicationController
 use UserController
 use CommentController
+use TeamController
