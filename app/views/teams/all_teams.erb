@@ -4,63 +4,11 @@
   
 <h2>Who is your team?</h2>
 
-<h3>American League East:</h3>
-
 <ul>
-  <li><input type='checkbox'>Baltimore Orioles</li>
-  <li><input type='checkbox'>Boston Red Sox</li>
-  <li><input type='checkbox'>New York Yankees</li>
-  <li><input type='checkbox'>Tampa Bay Rays</li>
-  <li><input type='checkbox'>Toronto Blue Jays</li>
+  <% @all_teams.each do |team| %>
+  <li><input type='checkbox'><%= team.team_name %></li>
+  <% end %>
 </ul>
 
-<h3>American League Central</h3>
-
-<ul>
-  <li><input type='checkbox'>Chicago White Sox</li>
-  <li><input type='checkbox'>Cleveland Indians</li>
-  <li><input type='checkbox'>Detroit Tigers</li>
-  <li><input type='checkbox'>Kansas City Royals</li>
-  <li><input type='checkbox'>Minnesota Twins</li>
-</ul>
-
-<h3>American League West</h3>
-
-<ul>
-  <li><input type='checkbox'>Houston Astros</li>
-  <li><input type='checkbox'>Los Angeles Angels</li>
-  <li><input type='checkbox'>Oakland Athletics</li>
-  <li><input type='checkbox'>Seattle Mariners</li>
-  <li><input type='checkbox'>Texas Rangers</li>
-</ul>
-
-<h3>National League East</h3>
-
-<ul>
-  <li><input type='checkbox'>Atlanta Braves</li>
-  <li><input type='checkbox'>Miami Marlins</li>
-  <li><input type='checkbox'>New York Mets</li>
-  <li><input type='checkbox'>Philadelphia Phillies</li>
-  <li><input type='checkbox'>Washington Nationals</li>
-</ul>
-
-<h3>National League Central</h3>
-
-<ul>
-  <li><input type='checkbox'>Cincinnati Reds</li>
-  <li><input type='checkbox'>Chicago Cubs</li>
-  <li><input type='checkbox'>Milwaukee Brewers</li>
-  <li><input type='checkbox'>Pittsburgh Pirates</li>
-  <li><input type='checkbox'>St Louis Cardinals</li>
-</ul>
-
-<h3>National League West</h3>
-
-<ul>
-  <li><input type='checkbox'>Arizona Diamondbacks</li>
-  <li><input type='checkbox'>Colorado Rockies</li>
-  <li><input type='checkbox'>Los Angeles Dodgers</li>
-  <li><input type='checkbox'>San Diego Padres</li>
-  <li><input type='checkbox'>San Francisco Giants</li>
-</ul>
 </form>
+
