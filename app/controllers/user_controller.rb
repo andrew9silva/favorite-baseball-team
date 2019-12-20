@@ -12,7 +12,7 @@ class UserController < ApplicationController
   
   get '/login' do
     if is_logged_in?(session)
-      redirect to '/create_comment'
+      redirect to '/teams'
     else 
       
     end
@@ -26,7 +26,7 @@ class UserController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect to '/create_comment'
+      redirect to '/teams'
     else
      erb :'user/login' 
     end
@@ -38,7 +38,7 @@ class UserController < ApplicationController
   
   get '/create_account' do 
     if is_logged_in?(session)
-      redirect to '/create_comment'
+      redirect to '/teams'
     end
     erb :'user/create_account'
   end
@@ -52,7 +52,7 @@ class UserController < ApplicationController
     user = User.create(:username => params["username"], :email => params["email"], :password => params["password"])
     session[:user_id] = user.id
     
-    redirect to '/create_comment'
+    redirect to '/teams'
   end
  end
  
