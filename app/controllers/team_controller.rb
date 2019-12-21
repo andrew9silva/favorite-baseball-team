@@ -6,7 +6,10 @@ class TeamController < ApplicationController
   end
   
   get '/teams/:id' do 
+    if !is_logged_in?(session)
+      redirect to '/login'
+    end
     @team = Team.find_by_id(params[:id])
-    erb:'teams/show_team'
+    erb :'teams/show_team'
   end
 end
