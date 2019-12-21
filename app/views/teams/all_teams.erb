@@ -6,7 +6,7 @@
 
 <ul>
   <% @all_teams.each do |team| %>
-  <li><input type='checkbox'><%= team.team_name %></li>
+  <li><a href='/teams/<%= team.team_name %>'><%= team.team_name %></a></li>
   <% end %>
 </ul>
 
