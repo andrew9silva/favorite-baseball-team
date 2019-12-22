@@ -1,11 +1,5 @@
 class CommentController < ApplicationController 
-  get '/create_comment' do
-    erb :'comment/create_comment'
-  end 
-  
-  post '/create_comment' do 
-    erb :'comment/create_comment'
-  end
+
   
   get '/comments' do 
     if !is_logged_in?(session)
@@ -18,7 +12,12 @@ class CommentController < ApplicationController
   
   post '/comments' do
     user = current_user(session)
-    comment = Comment.create(:content => params["content"], :user_id => user.id)
+    team = @team = Team.find_by_id(params[:id])
+    if params["content"].empty?
+      redirect to '/teams/all_teams'
+    end
+    comment = Comment.create(:content => params["content"], :user_id => user.id, :team_id => team.id)
+    redirect to '/comments'
   end 
   
 end

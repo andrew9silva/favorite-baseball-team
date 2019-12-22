@@ -13,11 +13,5 @@ class TeamController < ApplicationController
     erb :'teams/show_team'
   end
   
-  get '/teams/comments' do
-    erb :'teams/show_team'
-  end
-  
-  post '/teams/comments' do 
-    
-  end
+
 end
