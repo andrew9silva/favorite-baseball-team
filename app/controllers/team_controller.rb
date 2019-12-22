@@ -12,4 +12,12 @@ class TeamController < ApplicationController
     @team = Team.find_by_id(params[:id])
     erb :'teams/show_team'
   end
+  
+  get '/teams/comments' do
+    erb :'teams/show_team'
+  end
+  
+  post '/teams/comments' do 
+    
+  end
 end
