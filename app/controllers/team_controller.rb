@@ -13,5 +13,9 @@ class TeamController < ApplicationController
     erb :'teams/show_team'
   end
   
+  post '/teams/show_team' do 
+    "#{params[:content]}"
+  end
+  
 
 end
