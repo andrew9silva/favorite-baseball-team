@@ -13,7 +13,9 @@ class TeamController < ApplicationController
     erb :'teams/show_team'
   end
   
-  post '/teams/show_team' do 
+  post '/teams/show_team' do
+    user = current_user(session)
+    Comment.create(:content => params["content"], :user_id => user.id, :team_id => team.id)
     "#{params[:content]}"
   end
   
