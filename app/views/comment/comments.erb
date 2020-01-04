@@ -1,0 +1,8 @@
+<h1>Here are the comments for <%= @user.username %></h1>
+
+<% @comments.each do |c| %>
+<ol>
+  <li><%= c.content %></a></li>
+</ol>
+<% end %><br><br>
+<a href="/teams"><button>Teams</button></a>
