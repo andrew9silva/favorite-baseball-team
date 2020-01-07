@@ -1,8 +1,9 @@
 <h1>Here are the comments for <%= @user.username %></h1>
 
 <% @comments.each do |c| %>
-<ol>
-  <li><%= c.content %></li>
-</ol>
+<ul style="list-style-type-disc;">
+  <li><%= c.content %></li><br>
+  <a href="/comments/<%= c.id %>/edit"><button>Edit Comment</button></a>
+</ul>
 <% end %><br><br>
 <a href="/teams"><button>Teams</button></a>

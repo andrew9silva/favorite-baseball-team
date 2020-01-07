@@ -19,11 +19,17 @@ class CommentController < ApplicationController
     erb :"comment/edit_comment"
   end
   
-  patch 'comments/:id' do 
+  patch '/comments/:id' do 
     comment = Comment.find_by_id(params[:id])
     comment.update(:content => params["content"])
     comment.save
     
+    redirect to "/comments/#{comment.id}"
+  end
+  
+  post '/comments/:id/delete' do
+    @comment = Comment.find_by_id(params[:id])
+    @comment.delete
     redirect to '/comments'
   end
   
