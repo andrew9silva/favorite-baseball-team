@@ -6,7 +6,7 @@ class CommentController < ApplicationController
     erb :'comment/comments'
   end 
   
-  get 'comments/:id' do
+  get '/comments/:id' do
     @comment = Comment.find_by_id(params[:id])
     erb :'comment/show_comment'
   end
@@ -20,11 +20,11 @@ class CommentController < ApplicationController
   end
   
   patch '/comments/:id' do 
-    comment = Comment.find_by_id(params[:id])
-    comment.update(:content => params["content"])
-    comment.save
+    @comment = Comment.find_by_id(params[:id])
+    @comment.update(:content => params["content"])
+    @comment.save
     
-    redirect to "/comments/#{comment.id}"
+    redirect to "/comments/#{@comment.id}"
   end
   
   post '/comments/:id/delete' do

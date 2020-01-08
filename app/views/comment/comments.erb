@@ -1,9 +1,12 @@
 <h1>Here are the comments for <%= @user.username %></h1>
 
 <% @comments.each do |c| %>
-<ul style="list-style-type-disc;">
+<ol>
   <li><%= c.content %></li><br>
-  <a href="/comments/<%= c.id %>/edit"><button>Edit Comment</button></a>
-</ul>
+  <a href="/comments/<%= c.id %>/edit"><button>Edit Comment</button></a><br>
+  <form method="POST" action="/tweets/<%= c.id %>/delete">
+   <input type="submit" value="Delete Comment">
+  </form><br><br>
+</ol>
 <% end %><br><br>
 <a href="/teams"><button>Teams</button></a>
