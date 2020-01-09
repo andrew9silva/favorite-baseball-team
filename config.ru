@@ -8,3 +8,4 @@ run ApplicationController
 use UserController
 use CommentController
 use TeamController
+use Rack::MethodOverride
