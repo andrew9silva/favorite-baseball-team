@@ -1,3 +1,8 @@
 <%= @comment.content %><br>
 
+<a href="/comments/<%= @comment.id %>/edit"><button>Edit Comment</button></a><br>
+ <form method="POST" action="/tweets/<%= @comment.id %>/delete">
+   <input id="hidden" type="hidden" name="_method" value="delete">
+   <input type="submit" value="Delete Comment">
+ </form>
 <a href="/comments"><button>Back To Comments</button></a>

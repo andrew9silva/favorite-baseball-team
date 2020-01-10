@@ -2,11 +2,8 @@
 
 <% @comments.each do |c| %>
 <ol>
-  <li><%= c.content %></li><br>
-  <a href="/comments/<%= c.id %>/edit"><button>Edit Comment</button></a><br>
-  <form method="POST" action="/tweets/<%= c.id %>/delete">
-   <input type="submit" value="Delete Comment">
-  </form><br><br>
+  <li><%= c.content %></li>
+  <a href='/comments/<%= c.id %>'><button>View Comment</button></a><br><br>
 </ol>
 <% end %><br><br>
 <a href="/teams"><button>Teams</button></a>
