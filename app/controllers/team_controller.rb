@@ -13,13 +13,5 @@ class TeamController < ApplicationController
     erb :'teams/show_team'
   end
   
-  post '/teams/show_team' do
-    user = current_user(session)
-    team = Team.find_by_id(params[:id])
-    Comment.create(:content => params["content"], :user_id => user.id, :team_id => team.id)
-    
-    redirect to '/comments'
-  end
-  
 
 end

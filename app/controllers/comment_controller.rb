@@ -6,6 +6,16 @@ class CommentController < ApplicationController
     erb :'comment/comments'
   end 
   
+  get '/comment/new' do 
+    erb :'/comment/new'
+  end
+  
+  post '/comments' do 
+    user = current_user(session)
+    team = Team.find_by_id(params[:id])
+    comment = Comment.create(:content => params['content'], :user_id => user.id, :team_id => team.id)
+  end
+  
   get '/comments/:id' do
     @comment = Comment.find_by_id(params[:id])
     erb :'comment/show_comment'
