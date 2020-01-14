@@ -31,16 +31,16 @@ class CommentController < ApplicationController
   end
   
   patch '/comments/:id' do 
-    @comment = Comment.find_by_id(params[:id])
-    @comment.update(:content => params["content"])
-    @comment.save
+    comment = Comment.find_by_id(params[:id])
+    comment.update(:content => params["content"])
+    comment.save
     
-    redirect to "/comments/#{@comment.id}"
+    redirect to "/comments/#{comment.id}"
   end
   
   delete '/comments/:id/delete' do
-    @comment = Comment.find_by_id(params[:id])
-    @comment.destroy
+    comment = Comment.find_by_id(params[:id])
+    comment.destroy
     redirect to '/comments'
   end
   
