@@ -38,9 +38,9 @@ class CommentController < ApplicationController
     redirect to "/comments/#{comment.id}"
   end
   
-  delete '/comments/:id/delete' do
-    comment = Comment.find_by_id(params[:id])
-    comment.destroy
+  post '/comments/:id/delete' do
+    @comment = Comment.find_by_id(params[:id])
+    @comment.delete
     redirect to '/comments'
   end
   
