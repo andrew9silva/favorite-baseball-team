@@ -37,9 +37,6 @@ class UserController < ApplicationController
   end 
   
   get '/create_account' do 
-    if is_logged_in?(session)
-      redirect to '/teams'
-    end
     erb :'user/create_account'
   end
   
