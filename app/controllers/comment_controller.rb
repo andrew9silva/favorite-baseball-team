@@ -2,7 +2,7 @@ class CommentController < ApplicationController
 
   get '/comments' do
     @user = current_user(session)
-    @comments = Comment.all
+    @comments = @user.comments
     erb :'comment/comments'
   end 
   
