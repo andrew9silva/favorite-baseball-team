@@ -4,6 +4,11 @@
 <p><a href='/comment/new'><button>Click Here</button></a></p>
 
 <h2>See What Everyone is Saying about the <%= @team.team_name %></h2>
+<% @team_comments.each do |tc| %>
+<ol>
+  <li><%= tc.content %></li>
+</ol>
+<% end %>
 
 
 

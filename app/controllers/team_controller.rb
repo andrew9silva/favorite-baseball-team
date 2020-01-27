@@ -10,6 +10,7 @@ class TeamController < ApplicationController
       redirect to '/login'
     end
     @team = Team.find_by_id(params[:id])
+    @team_comments = @team.comments
     erb :'teams/show_team'
   end
   
