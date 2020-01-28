@@ -12,7 +12,7 @@ class CommentController < ApplicationController
   
   post '/comments' do 
     user = current_user(session)
-    team = Team.find_by_id(params[:id])
+    team = Team.find_by(params[:id])
     comment = Comment.create(:content => params['content'], :user_id => user.id, :team_id => team.id)
     
     redirect to '/comments'
