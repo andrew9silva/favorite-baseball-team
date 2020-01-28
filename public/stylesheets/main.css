@@ -1,7 +1,7 @@
 @media screen {
   /* --- Reset Styles --- */
   * {
-    list-style: none;
+    list-style: square;
     margin: 0;
     padding: 0;
   }
@@ -15,7 +15,7 @@
   body {
     background-color: lightblue;
     color: #333;
-    font-family: Sans-Serif;
+    font-family: Serif;
     line-height: 18px;
   }
 
@@ -58,6 +58,7 @@
   .content {
     float: left;
     width: 60%; /* 480px / 800px */
+    
   }
 
   .sidebar {
@@ -80,6 +81,12 @@
     border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
+  }
+  
+  li {
+    font-size: 15px;
+    border: 1px solid;
+    padding: 1%;
   }
 }
 
