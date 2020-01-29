@@ -6,13 +6,14 @@ class CommentController < ApplicationController
     erb :'comment/comments'
   end 
   
-  get '/comment/new' do 
+  get '/teams/:id/comment/new' do 
+    @team = Team.find(params[:team_id])
     erb :'/comment/new'
   end
   
   post '/comments' do 
     user = current_user(session)
-    team = Team.find_by(params[:id])
+    team = Team.find(params[:id])
     comment = Comment.create(:content => params['content'], :user_id => user.id, :team_id => team.id)
     
     redirect to '/comments'
