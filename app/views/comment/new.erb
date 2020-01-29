@@ -2,7 +2,7 @@
 
 <form action='/comments' method='POST'>
   Comment:<br>
-  <input type='hidden' id="<%= @team.id %>">
+  <input type='hidden' id="<%= @team.id %>" name="team_id" value="<%= @team.id %>">
   <input type='text' name='content'><br>
   <input type='submit' name='create_comment' id='create_comment'>
 </form>
