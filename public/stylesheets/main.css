@@ -13,7 +13,8 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-image: url(https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MIPPEWRSVQI6RCV4EKRWNNZPFU.jpg&w=767);
+    background-position: center;
     color: #333;
     font-family: Serif;
     line-height: 18px;
@@ -33,6 +34,10 @@
   h1 {
     font-size: 36px;
     line-height: 54px;
+  }
+  
+  h1.team {
+    font-family: Georgia;
   }
 
   h2 {
@@ -119,4 +124,5 @@
     font-size: 18px;
     line-height: 24px;
   }
+  
 }
