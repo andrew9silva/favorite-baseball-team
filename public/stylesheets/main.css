@@ -88,10 +88,16 @@
     padding-top: 20px;
   }
   
+  
+  
   li {
     font-size: 15px;
     border: 1px solid;
     padding: 1%;
+  }
+  
+  li a {
+    display: block;
   }
 }
 
