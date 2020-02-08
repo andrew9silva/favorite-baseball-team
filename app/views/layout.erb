@@ -3,6 +3,13 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <header>
+    <ul>
+      <li id="navigation_bar"><a href="/teams"><button id="navigation">Teams</button></a></li>
+      <li id="navigation_bar"><a href="/comments"><button id="navigation">Your Comments</button></a></li>
+      <li id="navigation_bar"><a href='/logout'><button id="navigation">Log Out</button></a></li>
+    </ul>
+  </header>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
@@ -19,12 +26,7 @@
         <%= yield %>
 
       <footer class="branding">
-        <ul>
-          <li id="navigation_bar"><a href="/teams">Teams</a></li>
-          <li id="navigation_bar"><a href="/comments">Your Comments</a></li>
-        </ul>
         <small>&copy; 2019 <strong>FavoriteBaseballTeam</strong></small>
-        <a href='/logout'><button>Log Out</button></a>
       </footer>
     </div>
 

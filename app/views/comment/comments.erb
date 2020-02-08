@@ -2,7 +2,7 @@
 
 <% @comments.each do |c| %>
 <ol>
-  <li><%= c.content %></li>
-  <a href='/comments/<%= c.id %>'><button>View Comment</button></a><br><br>
+  <li id="comment"><%= c.content %></li>
+  <a id="comment_button" href='/comments/<%= c.id %>'><button>View Comment</button></a><br><br>
 </ol>
 <% end %><br><br>
