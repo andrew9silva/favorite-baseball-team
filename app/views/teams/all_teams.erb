@@ -2,8 +2,6 @@
 
 <form action='/teams' method='POST'>
   
-<h2>Who is your team?</h2>
-
 <ul>
   <% @all_teams.each do |team| %>
   <li id="team_page"><button id="team"><a id="team" href='/teams/<%= team.id %>'><%= team.team_name %></a></button></li>

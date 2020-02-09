@@ -1,12 +1,12 @@
-<h1 class="team"><%= @team.team_name %></h1>
+<h1 id="team"><%= @team.team_name %></h1>
 
-<p>Have Something to Say?</p>
-<p><a href='/teams/<%= @team.id %>/comment/new'><button>Click Here</button></a></p>
+<p id="team">Have Something to Say?</p>
+<p><a href='/teams/<%= @team.id %>/comment/new'><button id="click">Click Here</button></a></p>
 
 <h2>See What Everyone is Saying about the <%= @team.team_name %></h2>
 <% @team_comments.each do |tc| %>
 <ol>
-  <li><%= tc.content %></li>
+  <li id="comment"><%= tc.content %></li>
 </ol>
 <% end %>
 

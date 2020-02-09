@@ -36,9 +36,10 @@
     line-height: 54px;
   }
   
-  h1.team {
+  h1#team {
+    color: #DC143C;
     font-family: Georgia;
-    
+    text-shadow: 2px 2px 4px #000;
   }
 
   h2 {
@@ -55,6 +56,10 @@
 
   p {
     margin-bottom: 18px;
+  }
+  
+  p#team {
+    font-size: 20px;
   }
 
   .main {
@@ -94,7 +99,12 @@
   }
   
   li#comment {
-    text-align: center;
+    margin-bottom: 25px;
+    padding: 5px;
+    border: 1px solid black;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 10px 10px #696969;
   }
   
   li#team_page {
@@ -128,6 +138,18 @@
   
   button#team:hover {
     background-color: #87CEEB;
+  }
+  
+  button#click {
+    color: navy;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: #D3D3D3;
+  }
+  
+  button#click:hover {
+    box-shadow: 0 12px 16px 0 rgba(2,2,2,2.24), 0 17px 50px 0 rgba(2,2,2,2.19);
   }
   
   a#team {
