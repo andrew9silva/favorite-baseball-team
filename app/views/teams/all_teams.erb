@@ -6,7 +6,7 @@
 
 <ul>
   <% @all_teams.each do |team| %>
-  <li id="team"><button id="team"><a href='/teams/<%= team.id %>'><%= team.team_name %></a></button></li>
+  <li id="team_page"><button id="team"><a id="team" href='/teams/<%= team.id %>'><%= team.team_name %></a></button></li>
   <% end %>
 </ul>
 
