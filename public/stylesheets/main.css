@@ -157,7 +157,7 @@
     text-decoration: none;
   }
   
-  input#comment {
+   input#comment {
     width: 300px;
     height: 100px;
     border-radius: 8px;
