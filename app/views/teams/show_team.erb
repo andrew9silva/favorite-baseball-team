@@ -5,7 +5,7 @@
 
 <form action='/comments' method='POST'>
   <input type='hidden' id="<%= @team.id %>" name="team_id" value="<%= @team.id %>">
-  <input placeholder="Enter Comment Here!" id="comment" type='text' name='content'><br>
+  <input placeholder="Enter Comment Here!" id="comment" type='textarea' name='content'><br>
   <input type='submit' name='create_comment' id='create_comment'>
 </form>
 
